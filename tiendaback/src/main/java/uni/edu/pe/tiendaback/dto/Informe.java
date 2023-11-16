@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Informe {
+    private int id_informe;
     private int id_usuario;
     private String tipo;
     private String asunto;
