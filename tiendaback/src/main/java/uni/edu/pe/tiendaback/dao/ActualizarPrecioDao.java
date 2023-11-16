@@ -34,10 +34,10 @@ public class ActualizarPrecioDao {
     public ObjUs actualizarPrecio(ObjUs objus) {
         try {
             obtenerConexion();
-            String sql = "UPDATE producto AS pro \n" +
-                    "INNER JOIN usuario AS us \n" +
-                    "ON pro.id_vendedor = us.id_usuario \n" +
+            String sql = "UPDATE pro \n" +
                     "SET pro.precio = ? \n" +
+                    "FROM producto AS pro \n" +
+                    "INNER JOIN usuario AS us ON pro.id_vendedor = us.id_usuario \n" +
                     "WHERE pro.nombre LIKE ?;";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setDouble(1, objus.getPrecio());

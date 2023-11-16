@@ -52,5 +52,11 @@ INSERT INTO pedido VALUES(00001, 00002, 00001, '24/10/2023', 'En espera');
 INSERT INTO pedido VALUES(00002, 00003, 00002, '24/10/2023', 'En espera');
 INSERT INTO pedido VALUES(00003, 00004, 00003, '24/10/2023', 'En espera');
 
-SELECT * FROM pedido;
+SELECT * FROM producto;
+DELETE FROM producto WHERE id_producto=4;
 
+UPDATE pro
+SET pro.precio = 1100
+FROM producto AS pro
+INNER JOIN usuario AS us ON pro.id_vendedor = us.id_usuario
+WHERE pro.nombre LIKE 'Smart%';

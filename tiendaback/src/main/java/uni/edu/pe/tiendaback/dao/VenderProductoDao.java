@@ -36,14 +36,15 @@ public class VenderProductoDao {
     public Producto venderProducto(Producto producto) {
         try{
             obtenerConexion();
-            String sql = "INSERT INTO producto(id_producto, id_vendedor, nombre, descripcion, precio) \n" +
-                    "VALUES(?, ?, ?, ?, ?);";
+            String sql = "INSERT INTO producto(id_producto, id_vendedor, nombre, descripcion, stock, precio) \n" +
+                    "VALUES(?, ?, ?, ?, ?, ?);";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setInt(1, producto.getId_producto());
             st.setInt(2, producto.getId_vendedor());
             st.setString(3, producto.getNombre());
             st.setString(4, producto.getDescripcion());
-            st.setDouble(5, producto.getPrecio());
+            st.setInt(5, producto.getStock());
+            st.setDouble(6, producto.getPrecio());
 
             st.executeUpdate();
             st.close();

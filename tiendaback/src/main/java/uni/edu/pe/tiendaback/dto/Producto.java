@@ -11,5 +11,6 @@ public class Producto {
     private int id_vendedor;
     private String nombre;
     private String descripcion;
+    private int stock;
     private double precio;
 }
