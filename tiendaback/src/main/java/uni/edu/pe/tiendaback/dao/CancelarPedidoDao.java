@@ -3,12 +3,12 @@ package uni.edu.pe.tiendaback.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import uni.edu.pe.tiendaback.dto.ObjUs;
+import uni.edu.pe.tiendaback.dto.RptaPedido;
 
 import java.sql.*;
 
 @Repository
-public class ActualizarPrecioDao {
+public class CancelarPedidoDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     private Connection conexion;
@@ -31,23 +31,21 @@ public class ActualizarPrecioDao {
             throw new RuntimeException(throwables);
         }
     }
-    public ObjUs actualizarPrecio(ObjUs objus) {
+
+    public String cancelarPedido(int id_objeto) {
         try {
             obtenerConexion();
-            String sql = "UPDATE pro \n" +
-                    "SET pro.precio = ? \n" +
-                    "FROM producto AS pro \n" +
-                    "INNER JOIN usuario AS us ON pro.id_vendedor = us.id_usuario \n" +
-                    "WHERE pro.nombre LIKE ?;";
+            String sql = "DELETE FROM pedido \n" +
+                    "WHERE id_producto = ? \n" +
+                    "AND id_usuario = 1;";
             PreparedStatement st = conexion.prepareStatement(sql);
-            st.setDouble(1, objus.getPrecio());
-            st.setString(2, objus.getNombre());
+            st.setInt(1, id_objeto);
             st.executeUpdate();
             st.close();
             cerrarConexion(null, st);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return objus;
+        return "Eliminado";
     }
 }
