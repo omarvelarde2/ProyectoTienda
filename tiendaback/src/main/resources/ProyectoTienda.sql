@@ -1,3 +1,7 @@
+CREATE DATABASE ProyectoTienda;
+
+/* Se crea la base de datos ProyectoTienda */
+
 CREATE TABLE usuario(
                         id_usuario NUMERIC(5),
                         tarjeta CHAR(8),
@@ -6,6 +10,8 @@ CREATE TABLE usuario(
                         direccion VARCHAR(100),
                         PRIMARY KEY(id_usuario)
 );
+
+/* Se crea la tabla usuario en la base de datos ProyectoTienda */
 
 CREATE TABLE producto(
                          id_producto NUMERIC(5),
@@ -18,6 +24,8 @@ CREATE TABLE producto(
                          FOREIGN KEY(id_vendedor) REFERENCES usuario(id_usuario)
 );
 
+/* Se crea la tabla producto en la base de datos ProyectoTienda donde se almacenará los usuarios*/
+
 CREATE TABLE pedido(
                        id_pedido NUMERIC(5),
                        id_usuario NUMERIC(5),
@@ -29,6 +37,8 @@ CREATE TABLE pedido(
                        FOREIGN KEY(id_producto) REFERENCES producto(id_producto)
 );
 
+/* Se crea la tabla pedido en la base de datos ProyectoTienda donde se almacenarán los pedidos realizados*/
+
 CREATE TABLE informe(
                         id_informe NUMERIC(5),
                         id_usuario NUMERIC(5),
@@ -39,6 +49,8 @@ CREATE TABLE informe(
                         PRIMARY KEY(id_informe),
                         FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario)
 );
+
+/* Se crea la tabla informe en la base de datos ProyectoTienda los informes redactados por los usuarios */
 
 INSERT INTO usuario VALUES(00002, '73859473', 'Juan Lopez', 0, 938274910, 'Av. Ejemplo');
 INSERT INTO usuario VALUES(00003, '75943956', 'tino', 0, 938274646, 'Av. Ejemplo');
