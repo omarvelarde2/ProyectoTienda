@@ -43,7 +43,7 @@ public class RealizarPedidoDao {
             st.setInt(1, pedido.getId_pedido());
             st.setInt(2, pedido.getId_producto());
             st.setInt(3, pedido.getId_usuario());
-            st.setString(4, "En espera");
+            st.setString(4, "Nuevo");
             st.setString(5, pedido.getFecha());
 
             st.executeUpdate();
