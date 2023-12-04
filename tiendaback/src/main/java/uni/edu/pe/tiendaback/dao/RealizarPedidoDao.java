@@ -38,13 +38,12 @@ public class RealizarPedidoDao {
         try{
             obtenerConexion();
             String sql = "INSERT INTO pedido(id_pedido, id_producto, id_usuario, estado, fecha) \n" +
-                    "VALUES(?, ?, ?, ?, ?);";
+                    "VALUES(?, ?, ?, ?);";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setInt(1, pedido.getId_pedido());
             st.setInt(2, pedido.getId_producto());
             st.setInt(3, pedido.getId_usuario());
             st.setString(4, "Nuevo");
-            st.setString(5, pedido.getFecha());
 
             st.executeUpdate();
             st.close();

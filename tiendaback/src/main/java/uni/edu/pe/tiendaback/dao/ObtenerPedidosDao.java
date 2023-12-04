@@ -64,8 +64,7 @@ public class ObtenerPedidosDao {
                 resultado.getInt("id_pedido"),
                 resultado.getInt("id_usuario"),
                 resultado.getInt("id_producto"),
-                resultado.getString("estado"),
-                resultado.getString("fecha")
+                resultado.getString("estado")
         );
         return report;
     }

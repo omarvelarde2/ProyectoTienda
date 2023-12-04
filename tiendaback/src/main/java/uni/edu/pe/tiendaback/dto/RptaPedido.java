@@ -10,5 +10,4 @@ public class RptaPedido {
     private int id_usuario;
     private int id_producto;
     private String estado;
-    private String fecha;
 }

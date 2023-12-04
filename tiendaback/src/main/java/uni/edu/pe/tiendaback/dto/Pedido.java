@@ -10,5 +10,5 @@ public class Pedido {
     private int id_pedido;
     private int id_producto;
     private int id_usuario;
-    private String fecha;
+    private int tarjeta;
 }

@@ -1,0 +1,40 @@
+// Variables de colores
+$color-encabezado: #333;
+$color-fondo: #f5f5f5;
+$color-borde: #ddd;
+$color-celda-claro: #ecf0f1; // Color claro para las celdas
+
+// Estilos generales de la tabla
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $color-fondo;
+}
+
+// Estilos para el encabezado de la tabla
+thead {
+  background-color: $color-encabezado;
+  color: #fff;
+}
+
+th {
+  padding: 10px;
+}
+
+// Estilos para las celdas de datos
+td {
+  padding: 10px;
+  border-bottom: 1px solid $color-borde;
+  background-color: $color-celda-claro; // Color claro para las celdas
+}
+
+// Estilo para las celdas de datos en la primera columna
+td:first-child {
+  font-weight: bold;
+  background-color: $color-fondo; // Color normal para la primera columna
+}
+
+// Estilo para las filas impares
+tr:nth-child(odd) {
+  background-color: lighten($color-fondo, 5%);
+}

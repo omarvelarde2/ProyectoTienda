@@ -9,8 +9,6 @@ import lombok.Data;
 public class Usuario {
     private int id_usuario;
     private String nombre;
-    private String tarjeta;
-    private int saldo;
     private int telefono;
     private String direccion;
 }

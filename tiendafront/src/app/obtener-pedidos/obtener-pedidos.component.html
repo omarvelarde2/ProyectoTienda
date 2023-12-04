@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Codigo de usuario</th>
+    <th>Codigo de producto</th>
+    <th>Identificador de pedido</th>
+    <th>Estado de pedido</th>
+  </tr>
+  <tr *ngFor="let item of lista">
+    <td>{{item.id_usuario}}</td>
+    <td>{{item.id_producto}}</td>
+    <td>{{item.id_pedido}}</td>
+    <td>{{item.estado}}</td>
+  </tr>
+</table>

@@ -36,14 +36,12 @@ public class CrearCuentaDao {
         try{
             obtenerConexion();
             String sql = "INSERT INTO usuario(id_usuario, nombre, tarjeta, saldo, telefono, direccion) \n" +
-                    "VALUES(?, ?, ?, ?, ?, ?);";
+                    "VALUES(?, ?, ?, ?);";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setInt(1, usuario.getId_usuario());
             st.setString(2, usuario.getNombre());
-            st.setString(3, usuario.getTarjeta());
-            st.setDouble(4, usuario.getSaldo());
-            st.setInt(5, usuario.getTelefono());
-            st.setString(6, usuario.getDireccion());
+            st.setInt(3, usuario.getTelefono());
+            st.setString(4, usuario.getDireccion());
 
             st.executeUpdate();
             st.close();
