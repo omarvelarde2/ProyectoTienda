@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ObtenerPedidosComponent } from './obtener-pedidos/obtener-pedidos.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { RealizarPedidoComponent } from './realizar-pedido/realizar-pedido.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ObtenerPedidosComponent
+    ObtenerPedidosComponent,
+    RealizarPedidoComponent
   ],
   imports: [
     BrowserModule,

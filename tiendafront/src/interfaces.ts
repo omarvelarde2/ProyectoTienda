@@ -11,10 +11,8 @@ export interface RptaReportePedidos{
 
 
 export interface Pedido{
-  id_pedido: number;
   id_producto:number;
-  id_usuario:number;
-  tarjeta:number;
+  cantidad:number;
 }
 
 export interface Producto{

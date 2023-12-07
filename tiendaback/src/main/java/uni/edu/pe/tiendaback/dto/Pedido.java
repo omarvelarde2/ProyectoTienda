@@ -7,8 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 
 public class Pedido {
-    private int id_pedido;
     private int id_producto;
-    private int id_usuario;
-    private int tarjeta;
+    private int cantidad;
 }

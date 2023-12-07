@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Realizar pedido</h1>
+  <div class="form-container">
+    <div class="form-group">
+      <label>Código de producto</label>
+      <input type="text" name="id_producto" [(ngModel)]="pedido.id_producto">
+    </div>
+
+    <div class="form-group">
+      <label>Cantidad a pedir</label>
+      <input type="text" name="cantidad" [(ngModel)]="pedido.cantidad">
+    </div>
+
+    <button (click)="realizar()">Realizar pedido</button>
+  </div>
+</div>

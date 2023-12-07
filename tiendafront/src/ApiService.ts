@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import {Observable, throwError} from "rxjs";
 
 import {catchError, retry} from "rxjs/operators";
-import {RptaReportePedidos} from "./interfaces";
+import {Pedido, RptaReportePedidos} from "./interfaces";
 
 
 @Injectable({providedIn: 'root'})
@@ -32,5 +32,11 @@ export class ApiService {
       );
   }
 
-
+  realizarPedido(data: Pedido):Observable<Pedido>{
+    return this.http.post<Pedido>("http://localhost:8080/realizarPedido", data,this.httpOptions )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
 }

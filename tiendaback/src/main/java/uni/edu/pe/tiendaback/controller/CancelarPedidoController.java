@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uni.edu.pe.tiendaback.service.CancelarPedidoService;
 
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/cancelarPedido")
 public class CancelarPedidoController {
