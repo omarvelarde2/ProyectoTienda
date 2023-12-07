@@ -2,7 +2,6 @@ package uni.edu.pe.tiendaback.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uni.edu.pe.tiendaback.dto.RptaPedido;
 import uni.edu.pe.tiendaback.service.CancelarPedidoService;
 
 @RestController
