@@ -35,13 +35,12 @@ public class CrearCuentaDao {
     public Usuario crearCuenta(Usuario usuario) {
         try{
             obtenerConexion();
-            String sql = "INSERT INTO usuario(id_usuario, nombre, tarjeta, saldo, telefono, direccion) \n" +
-                    "VALUES(?, ?, ?, ?);";
+            String sql = "INSERT INTO usuario(nombre, telefono, direccion) \n" +
+                    "VALUES(?, ?, ?);";
             PreparedStatement st = conexion.prepareStatement(sql);
-            st.setInt(1, usuario.getId_usuario());
-            st.setString(2, usuario.getNombre());
-            st.setInt(3, usuario.getTelefono());
-            st.setString(4, usuario.getDireccion());
+            st.setString(1, usuario.getNombre());
+            st.setInt(2, usuario.getTelefono());
+            st.setString(3, usuario.getDireccion());
 
             st.executeUpdate();
             st.close();

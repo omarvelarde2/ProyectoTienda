@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Crear cuenta</h1>
+  <div class="form-container">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" name="nombre" [(ngModel)]="usuario.nombre">
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input type="text" name="telefono" [(ngModel)]="usuario.telefono">
+    </div>
+
+    <div class="form-group">
+      <label>Dirección</label>
+      <input type="text" name="direccion" [(ngModel)]="usuario.direccion">
+    </div>
+
+    <button (click)="crear()">Crear cuenta</button>
+  </div>
+</div>

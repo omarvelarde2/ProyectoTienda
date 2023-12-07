@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Cancelar pedido</h1>
+  <div class="form-container">
+    <div class="form-group">
+      <label>Código de pedido</label>
+      <input type="text" name="id_pedido" [(ngModel)]="codigoPedido">
+    </div>
+
+    <button (click)="cancelar()">Cancelar pedido</button>
+  </div>
+</div>

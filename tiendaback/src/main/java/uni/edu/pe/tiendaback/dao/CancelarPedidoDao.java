@@ -3,7 +3,6 @@ package uni.edu.pe.tiendaback.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import uni.edu.pe.tiendaback.dto.RptaPedido;
 
 import java.sql.*;
 
@@ -36,7 +35,7 @@ public class CancelarPedidoDao {
         try {
             obtenerConexion();
             String sql = "DELETE FROM pedido \n" +
-                    "WHERE id_producto = ? \n" +
+                    "WHERE id_pedido} = ? \n" +
                     "AND id_usuario = 1;";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setInt(1, id_objeto);

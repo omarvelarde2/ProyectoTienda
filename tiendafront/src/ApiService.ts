@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import {Observable, throwError} from "rxjs";
 
 import {catchError, retry} from "rxjs/operators";
-import {Pedido, RptaReportePedidos} from "./interfaces";
+import {Informe, Pedido, RptaReportePedidos, Usuario} from "./interfaces";
 
 
 @Injectable({providedIn: 'root'})
@@ -34,6 +34,30 @@ export class ApiService {
 
   realizarPedido(data: Pedido):Observable<Pedido>{
     return this.http.post<Pedido>("http://localhost:8080/realizarPedido", data,this.httpOptions )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  enviarInforme(data: Informe):Observable<Informe>{
+    return this.http.post<Informe>("http://localhost:8080/enviarInforme", data,this.httpOptions )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  cancelarPedido(data: number):Observable<number>{
+    return this.http.post<number>("http://localhost:8080/cancelarPedido", data,this.httpOptions )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  crearCuenta(data: Usuario):Observable<Usuario>{
+    return this.http.post<Usuario>("http://localhost:8080/crearCuenta", data,this.httpOptions )
       .pipe(
         retry(1),
         catchError(this.errorHandl)

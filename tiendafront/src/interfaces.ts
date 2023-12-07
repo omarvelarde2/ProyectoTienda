@@ -15,10 +15,14 @@ export interface Pedido{
   cantidad:number;
 }
 
-export interface Producto{
-  id_producto: number;
-  nombre:string;
-  descripcion:string;
-  stock:number;
-  precio:number;
+export interface Informe{
+  tipo:String;
+  asunto:String;
+  descripcion:String;
+}
+
+export interface Usuario{
+  nombre:String;
+  telefono:number;
+  direccion:String
 }

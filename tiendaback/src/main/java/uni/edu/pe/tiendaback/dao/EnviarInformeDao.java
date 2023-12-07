@@ -36,14 +36,13 @@ public class EnviarInformeDao {
     public Informe enviarInforme(Informe informe) {
         try {
             obtenerConexion();
-            String sql = "INSERT INTO informe(id_informe, id_usuario, tipo, asunto, descripcion, estado) VALUES(?, ?, ?, ?, ?, ?);";
+            String sql = "INSERT INTO informe(id_usuario, tipo, asunto, descripcion, estado) VALUES(?, ?, ?, ?, ?);";
             PreparedStatement st = conexion.prepareStatement(sql);
-            st.setInt(1, informe.getId_informe());
-            st.setInt(2, informe.getId_usuario());
-            st.setString(3, informe.getTipo());
-            st.setString(4, informe.getAsunto());
-            st.setString(5, informe.getDescripcion());
-            st.setString(6, "Enviado");
+            st.setInt(1, 1);
+            st.setString(2, informe.getTipo());
+            st.setString(3, informe.getAsunto());
+            st.setString(4, informe.getDescripcion());
+            st.setString(5, "Enviado");
 
             st.executeUpdate();
 
