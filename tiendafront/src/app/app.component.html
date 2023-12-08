@@ -1,4 +1,3 @@
-<router-outlet></router-outlet>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +11,16 @@
   <h1>TechnoStore</h1>
   <nav>
     <ul>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="/realizarPedido">Realizar Pedido</a></li>
-      <li><a href="/obtenerPedidos">Mis Pedidos</a></li>
-      <li><a href="#cuenta">Mi Cuenta</a></li>
+      <li><a href="/cancelarPedido">Cancelar pedido</a></li>
+      <li><a href="/realizarPedido">Agregar al carrito</a></li>
+      <li><a href="/obtenerPedidos">Consultar mis pedidos</a></li>
+      <li><a href="/crearCuenta">Mi Cuenta</a></li>
+      <li><a href="/enviarInforme">¿Tienes problemas?</a></li>
     </ul>
   </nav>
 </header>
+
+<router-outlet></router-outlet>
 
 <section id="banner">
   <h2>Bienvenido a TechnoStore</h2>
@@ -26,21 +28,16 @@
 </section>
 
 <section id="productos">
-  <!-- Aquí irían tus productos, puedes mostrarlos como tarjetas, listados, etc. -->
+  <div *ngFor="let producto of productos" class="producto">
+    <img [src]="producto.imagen" alt="Imagen del producto">
+    <div class="info">
+      <p><strong>Código de producto:</strong> {{ producto.codigo }}</p>
+      <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+      <p><strong>Precio:</strong> {{ producto.precio | currency:'USD':'symbol' }}</p>
+      <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+    </div>
+  </div>
 </section>
-
-<section id="realizar-pedido">
-  <!-- Aquí iría tu formulario para realizar un pedido -->
-</section>
-
-<section id="mis-pedidos">
-  <!-- Aquí mostrarías la información de los pedidos del usuario -->
-</section>
-
-<section id="cuenta">
-  <!-- Aquí mostrarías la información de la cuenta del usuario -->
-</section>
-
 <footer>
   <p>&copy; 2023 TechnoStore - Todos los derechos reservados</p>
 </footer>

@@ -70,3 +70,43 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* productos.component.scss */
+
+.producto {
+  display: flex;
+  margin-bottom: 20px;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
+  .info {
+    flex: 1;
+
+    p {
+      margin-bottom: 8px;
+    }
+  }
+
+  display: flex;
+  margin-bottom: 20px;
+
+  img {
+    width: 150px; /* Ajusta el ancho según tus preferencias */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    object-fit: cover; /* Ajusta el comportamiento del tamaño de la imagen */
+    margin-right: 20px;
+  }
+
+  .info {
+    flex: 1;
+
+    p {
+      margin-bottom: 8px;
+    }
+  }
+}

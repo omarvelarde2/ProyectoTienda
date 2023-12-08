@@ -35,7 +35,7 @@ public class CancelarPedidoDao {
         try {
             obtenerConexion();
             String sql = "DELETE FROM pedido \n" +
-                    "WHERE id_pedido} = ? \n" +
+                    "WHERE id_pedido = ? \n" +
                     "AND id_usuario = 1;";
             PreparedStatement st = conexion.prepareStatement(sql);
             st.setInt(1, id_objeto);
